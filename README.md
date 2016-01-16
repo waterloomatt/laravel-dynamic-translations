@@ -26,10 +26,10 @@ Now, the fun bit! In this example, you can override the 'pageTitle' translation 
 In my messages.php translation file I override the translations by specifying a controller or action (or both).
 ```php 
 return [
-  'controller:search_key:pageTitle' => 'Search',              // Applied to !any! action in SearchController 
-  'action:index_key:pageTitle' => 'Search',                   // Applied index action on !any! controller
-  'pageTitle' => 'My Application!'                            // Applied to all pages !except! the ones overriden in this file
-  'controller:user_action:update_key:pageTitle' => 'Update',  // Applied update action on Usercontroller
+  'controller:search_key:pageTitle'             => 'Search',          // Applied to !any! action in SearchController 
+  'action:index_key:pageTitle'                  => 'Search',          // Applied index action on !any! controller
+  'pageTitle'                                   => 'My Application!'  // Applied to all pages !except! the ones overriden in this file
+  'controller:user_action:update_key:pageTitle' => 'Update',          // Applied update action on Usercontroller
 ];
 ```
 
@@ -49,31 +49,31 @@ In the following examples, assume your current route is http://localhost/public/
 * Example 1
 ```php 
 return [
-  'controller:search_key:pageTitle' => 'Search',                // Loser
-  'controller:search_action:index_key:pageTitle' => 'Search',   // Winner!
+  'controller:search_key:pageTitle'               => 'Search',    // Loser
+  'controller:search_action:index_key:pageTitle'  => 'Search',    // Winner!
 ];
 ```
 
 * Example 2
 ```php 
 return [
-  'action:index_key:pageTitle' => 'Search',                     // Winner!
-  'pageTitle' => 'Search',                                      // Loser
+  'action:index_key:pageTitle'                    => 'Search',    // Winner!
+  'pageTitle'                                     => 'Search',    // Loser
 ];
 ```
 
 * Example 3
 ```php 
 return [
-  'controller:search_action:result_key:pageTitle' => 'Search',  // Loser
-  'controller:search_action:index_key:pageTitle' => 'Search',   // Winner!
+  'controller:search_action:result_key:pageTitle' => 'Search',    // Loser
+  'controller:search_action:index_key:pageTitle'  => 'Search',    // Winner!
 ];
 ```
 
 * Example 4
 ```php 
 return [
-  'controller:search_key:pageTitle' => 'Search',                // Loser
-  'action:index_key:pageTitle' => 'Search',                     // Winner!
+  'controller:search_key:pageTitle'               => 'Search',    // Loser
+  'action:index_key:pageTitle'                    => 'Search',    // Winner!
 ];
 ```
