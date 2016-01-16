@@ -1,0 +1,13 @@
+{
+    "name": "waterloomatt/translation",
+    "description": "Handle dynamic translations based on current controller/action.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matt Skelton",
+            "email": "waterloomatt@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
