@@ -61,6 +61,12 @@ class Translator extends \Illuminate\Translation\Translator
         return $key;
     }
 
+    public function has($key, $locale = null, $fallback = true)
+    {
+        $translation = $this->get($key, [], $locale, $fallback);
+        return (!empty($translation) && $translation == $key);
+    }
+
     /**
      * Returns an array of translation keys specific to the currently requested controller/action.
      *
