@@ -65,7 +65,7 @@ class Translator extends \Illuminate\Translation\Translator
      * Returns a boolean indicating if the translation is an empty string. This function will also
      * return true if no translation is defined for the given key.
      *
-     * This is use for situations where you conditionally want to output a translation. Ex:
+     * This is useful for situations where you conditionally want to output a translation. Ex:
      *  @if (!Lang::isBlank('messages.pageTitle'))
      *      <h1>{{ trans('messages.pageTitle') }}</h1>
      *  @endif
