@@ -64,7 +64,7 @@ class Translator extends \Illuminate\Translation\Translator
     public function has($key, $locale = null, $fallback = true)
     {
         $translation = $this->get($key, [], $locale, $fallback);
-        return (!empty($translation) && $translation == $key);
+        return !(empty($translation) || $translation == $key);
     }
 
     /**
