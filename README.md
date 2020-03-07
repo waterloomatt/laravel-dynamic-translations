@@ -34,14 +34,11 @@ return [
 ```
 As you can see, you can control which translation will be used by specifying the *controller* or *action* or both. The most specific translation that matches the current route will be used. 
 
-If you override your translation with a controller or action, make sure to distinguish the translation key by using *`.._key:pageTitle`. 
+If you override your translation with a controller or action, make sure to distinguish the translation key by using `.._key:pageTitle`. 
 
-Each component separates its name from its value by a *colon* `controller:user`, `controller:payment`
-Each component separates itself from other components by an *underscore* `controller:user_action:update`, `controller:payment_action:decline_key:pageTitle`
-The third component is *key* which simply defines the translation key.
-
-So to summarize: 
-- **controller**:nameOfController_**action**:nameOfAction_**key**:name
+- Each component separates its name from its value by a *colon* `controller:user`, `controller:payment`
+- Each component separates itself from other components by an *underscore* `controller:user_action:update`, `controller:payment_action:decline_key:pageTitle`
+- The third component is *key* which simply defines the translation key.
 - Both controller and action are optional
 
 ### Important! Translations are searched by most specific to least specific. 
