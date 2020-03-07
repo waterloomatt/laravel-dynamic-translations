@@ -23,19 +23,24 @@ In your views, use Laravel's translation helper as you normally would.
 
 Now, the fun bit! In this example, you can override the 'pageTitle' translation by specifying which controller or action (or both) a translation should apply to. 
 
-In my messages.php translation file I override the translations by specifying a controller or action (or both).
+In your messages.php translation file, override the `pageTitle` translation by specifying a controller or action (or both).
 ```php 
 return [
-  'controller:search_key:pageTitle'             => 'Search',          // Applied to !any! action in SearchController 
-  'action:index_key:pageTitle'                  => 'Search',          // Applied index action on !any! controller
-  'pageTitle'                                   => 'My Application!'  // Applied to all pages !except! the ones overriden in this file
-  'controller:user_action:update_key:pageTitle' => 'Update',          // Applied update action on Usercontroller
+  'pageTitle'                                   => 'My Application!'  // Applies to all pages
+  'controller:search_key:pageTitle'             => 'Search',          // Applies to any action in `SearchController`
+  'action:index_key:pageTitle'                  => 'All Index Pages!',// Applies to `index` action on any controller
+  'controller:user_action:update_key:pageTitle' => 'Update User',     // Applies to `update` action on `Usercontroller`
 ];
 ```
+As you can see, you can control which translation will be used by specifying the *controller* or *action* or both. The most specific translation that matches the current route will be used. 
 
-As you can see there are 3 components which you can use to define your translations: *controller*, *action*, and *key*. Each component separates its name from its value by a *colon*. Each component separates itself from other components by an *underscore*. The third component is *key* which simply defines the translation key.
+If you override your translation with a controller or action, make sure to distinguish the actual key by using *`.._key:pageTitle`. 
 
-So to summarize: **controller:**name**_action:**name**_key:**name
+Each component separates its name from its value by a *colon*. 
+Each component separates itself from other components by an *underscore*. 
+The third component is *key* which simply defines the translation key.
+
+So to summarize: **controller**:nameOfController_**action**:nameOfAction_**key**:name
 
 ### Important! Translations are searched by most specific to least specific. 
 
